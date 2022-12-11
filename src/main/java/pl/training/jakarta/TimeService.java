@@ -1,6 +1,5 @@
 package pl.training.jakarta;
 
-import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import javax.ejb.EJB;
 import javax.ws.rs.GET;

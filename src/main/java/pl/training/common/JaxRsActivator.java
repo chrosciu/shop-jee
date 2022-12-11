@@ -1,4 +1,4 @@
-package pl.training.jakarta;
+package pl.training.common;
 
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
