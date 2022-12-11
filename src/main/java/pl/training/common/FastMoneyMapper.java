@@ -3,7 +3,6 @@ package pl.training.common;
 import java.util.Optional;
 import org.javamoney.moneta.FastMoney;
 import org.mapstruct.Mapper;
-import pl.training.products.PolishMoney;
 
 @Mapper
 public interface FastMoneyMapper {

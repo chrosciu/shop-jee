@@ -1,4 +1,4 @@
-package pl.training.products;
+package pl.training.common;
 
 import javax.money.CurrencyUnit;
 import javax.money.Monetary;
