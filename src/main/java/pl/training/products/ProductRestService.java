@@ -48,6 +48,6 @@ public class ProductRestService {
     public ProductOutputDto getProduct(@PathParam("id") Long id) {
         return Optional.ofNullable(productRepository.findById(id))
             .map(productMapper::toOutputDto)
-            .orElseThrow(RuntimeException::new);
+            .orElseThrow(() -> new ProductNotFoundException(id));
     }
 }
