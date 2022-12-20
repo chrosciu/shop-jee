@@ -1,0 +1,5 @@
+embed-server --std-out=echo
+module add --name=org.postgres --resources=postgresql-42.3.3.jar --dependencies=javax.api,javax.transaction.api
+/subsystem=datasources/jdbc-driver=postgres:add(driver-name="postgres",driver-module-name="org.postgres",driver-class-name=org.postgresql.Driver)
+data-source add --jndi-name=java:/PostgresDS --name=PostgresDS --connection-url=jdbc:postgresql://postgres:5432/training --driver-name=postgres --user-name=admin --password=admin
+stop-embedded-server
