@@ -35,4 +35,14 @@ public class JpaProductRepository implements ProductRepository {
             .setParameter("productType", productType)
             .getResultList();
     }
+
+    @Override
+    public List<Product> findAllCheaperThan(long price) {
+        return entityManager
+            .createNamedQuery(Product.FIND_ALL_CHEAPER_THAN, Product.class)
+            .setParameter("price", price)
+            .getResultList();
+    }
+
+
 }

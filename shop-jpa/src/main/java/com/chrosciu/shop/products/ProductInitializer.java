@@ -39,5 +39,8 @@ public class ProductInitializer {
 
         List<Product> productsExceptBooks = productRepository.findAllExceptType(ProductType.BOOK);
         log.info(String.format("productsExceptBooks : %s", productsExceptBooks));
+
+        List<Product> cheapProducts = productRepository.findAllCheaperThan(10000);
+        log.info(String.format("cheapProducts : %s", cheapProducts));
     }
 }

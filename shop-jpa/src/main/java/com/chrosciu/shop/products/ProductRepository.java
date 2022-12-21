@@ -12,4 +12,6 @@ public interface ProductRepository {
     Product findById(long id);
 
     List<Product> findAllExceptType(ProductType productType);
+
+    List<Product> findAllCheaperThan(long price);
 }
