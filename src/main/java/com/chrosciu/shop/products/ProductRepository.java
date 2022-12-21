@@ -7,5 +7,5 @@ import javax.ejb.Remote;
 public interface ProductRepository {
     Product save(Product product);
     List<Product> findAll();
-    Product findById(Long id);
+    Product findById(long id);
 }

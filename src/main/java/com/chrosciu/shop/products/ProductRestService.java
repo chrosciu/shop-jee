@@ -30,9 +30,9 @@ public class ProductRestService {
     @GET
     @Path("{id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public ProductOutputDto getProduct(@PathParam("id") Long id) {
+    public ProductOutputDto getProduct(@PathParam("id") long id) {
         return Optional.ofNullable(productRepository.findById(id))
             .map(productMapper::toDto)
-            .get();
+            .orElseThrow(() -> new ProductNotFoundException(id));
     }
 }

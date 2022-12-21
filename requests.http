@@ -3,3 +3,6 @@ GET localhost:8080/shop-jee-1.0-SNAPSHOT/api/products
 
 ### Get single product by id
 GET localhost:8080/shop-jee-1.0-SNAPSHOT/api/products/1
+
+### Get non-existing product by id
+GET localhost:8080/shop-jee-1.0-SNAPSHOT/api/products/3

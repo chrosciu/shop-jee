@@ -24,7 +24,7 @@ public class HashMapProductRepository implements ProductRepository {
     }
 
     @Override
-    public Product findById(Long id) {
+    public Product findById(long id) {
         return products.get(id);
     }
 }
