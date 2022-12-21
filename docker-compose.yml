@@ -10,3 +10,11 @@ services:
       - POSTGRES_DB=shop-jee
       - POSTGRES_USER=admin
       - POSTGRES_PASSWORD=admin
+
+  wildfly-app:
+    depends_on:
+      - postgres
+    image: wildfly-app
+    ports:
+      - "8080:8080"
+      - "9990:9990"
