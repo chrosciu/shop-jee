@@ -1,0 +1,2 @@
+### Get all products
+GET localhost:8080/shop-jee-1.0-SNAPSHOT/api/products
