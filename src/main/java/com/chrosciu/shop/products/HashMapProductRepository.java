@@ -5,7 +5,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import javax.ejb.Singleton;
 
+@Singleton
 public class HashMapProductRepository implements ProductRepository {
     private Map<Long, Product> products = new HashMap<>();
     private long index = 0;

@@ -1,9 +1,20 @@
 package com.chrosciu.shop.products;
 
+
+import lombok.extern.jbosslog.JBossLog;
+
+import javax.annotation.PostConstruct;
+import javax.ejb.EJB;
+import javax.ejb.Singleton;
+import javax.ejb.Startup;
 import java.math.BigDecimal;
 
+@Singleton
+@Startup
+@JBossLog
 public class ProductInitializer {
-    private ProductRepository productRepository = new HashMapProductRepository();
+    @EJB
+    private ProductRepository productRepository;
 
     private static final Product VIDEO_PRODUCT = Product.builder()
         .name("Spring masterclass")
@@ -19,13 +30,11 @@ public class ProductInitializer {
         .price(BigDecimal.valueOf(200))
         .build();
 
+    @PostConstruct
     public void init() {
+        log.info("Initializing products");
         productRepository.save(VIDEO_PRODUCT);
         productRepository.save(BOOK_PRODUCT);
-    }
-
-    public static void main(String[] args) {
-        new ProductInitializer().init();
-        System.out.println("Products initialized!");
+        log.info("Products initialized!");
     }
 }
